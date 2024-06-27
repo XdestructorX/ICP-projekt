@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "praktyka_backend": {
+      "candid": "src/praktyka_backend/praktyka_backend.did",
+      "package": "praktyka_backend",
+      "type": "rust"
+    },
+    "praktyka_frontend": {
+      "dependencies": [
+        "praktyka_backend"
+      ],
+      "source": [
+        "src/praktyka_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "praktyka_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

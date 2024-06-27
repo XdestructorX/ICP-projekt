@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/praktyka_backend"
+]
+resolver = "2"
