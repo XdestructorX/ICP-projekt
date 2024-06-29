@@ -1,28 +1,24 @@
 <script setup>
 import { ref } from 'vue';
 import { praktyka_backend } from 'declarations/praktyka_backend/index';
-let greeting = ref('');
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const target = e.target;
-  const name = target.querySelector('#name').value;
-  await praktyka_backend.greet(name).then((response) => {
-    greeting.value = response;
-  });
+let input = ref("");
+const fruits = ["apple", "banana", "orange"];
+function filteredList() {
+  return fruits.filter((fruit) =>
+    fruit.toLowerCase().includes(input.value.toLowerCase())
+  );
 }
 </script>
 
 <template>
   <main>
-    <img src="/logo2.svg" alt="DFINITY logo" />
-    <br />
-    <br />
-    <form action="#" @submit="handleSubmit">
-      <label for="name">Enter your name: &nbsp;</label>
-      <input id="name" alt="Name" type="text" />
-      <button type="submit">Click Me!</button>
-    </form>
-    <section id="greeting">{{ greeting }}</section>
+   <input type="text" class="text-lg" v-model="input" placeholder="Search fruits..." />
+   <div class="item fruit" v-for="fruit in filteredList()" :key="fruit">
+     <p>{{ fruit }}</p>
+    </div>
+    <div class="item error " v-if="input&&!filteredList().length">
+      <p>No results found!</p>
+    </div>
   </main>
 </template>
