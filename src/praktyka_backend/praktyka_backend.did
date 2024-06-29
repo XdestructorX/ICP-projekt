@@ -1,3 +1,6 @@
 service : {
     "greet": (text) -> (text) query;
+    "nowyTytul": (text) -> ();
+    "noweTresci": (text) -> ();
+    "odczytajTytuly": (text) -> (vec text) query;
 }

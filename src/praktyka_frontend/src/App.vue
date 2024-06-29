@@ -13,7 +13,7 @@ function filteredList() {
 
 <template>
   <main>
-   <input type="text" class="text-lg" v-model="input" placeholder="Search fruits..." />
+   <input type="text" v-model="input" placeholder="Search fruits..." />
    <div class="item fruit" v-for="fruit in filteredList()" :key="fruit">
      <p>{{ fruit }}</p>
     </div>
